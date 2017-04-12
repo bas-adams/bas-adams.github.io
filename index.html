@@ -1,1 +1,54 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<title>Hoisting</title>
+</head>
+<body>
+	<header class="header">Hoistng ia a Javascript mechanism where ariables nad function declarations are moved to the top of their scope before code execution</header>
+	<section class="section">
+		
+		<article class="code_block">
+			<code class="language-javascript">
+				<span>a <span class="assignment">=</span> <span class="value">2</span>;</span>
+				<span><var>var</var> a;</span>
+				<span><span class="consol">console.log</span>(a);</span>
+			</code>
+		</article>
+
+		<article class="code_block">
+			<code class="language-javascript codeAnim">
+				<span id="second">a <span class="assignment">=</span> <span class="value">2</span>;</span>
+				<span id="first"><var>var</var> a;</span>
+				<span><span class="consol">console.log</span>(a);</span>
+				<span class="result">// 2</span>
+			</code>
+		</article>
+
+	</section>
+
+	<section class="section">
+		
+		<article class="code_block">
+			<code class="language-javascript">
+				<span><span class="consol">console.log</span>(a);</span>
+				<span><var>var</var> a<span class="assignment"> = </span><span class="value">2</span>;</span>
+			</code>
+		</article>
+
+		<article class="code_block">
+			<code class="language-javascript codeAnim2">
+				<span id="first_1"><span class="consol">console.log</span>(a)</span>
+				<span><span id="second_1"><var>var</var> a</span><span id="second_2"><span class="assignment"> = </span><span class="value">2</span>;</span></span>
+				<span class="result" id="third_1">// undefined</span>
+			</code>
+		</article>
+
+	</section>
+
+	<p class="selector_before">tttt</p>
+	<footer class="footer">2017</footer>
+</body>
+</html>

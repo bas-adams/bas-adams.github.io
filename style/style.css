@@ -1,0 +1,243 @@
+html{
+	box-sizing: border-box;
+}
+
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size:12px;
+}
+
+.section {
+	color: #fff;
+	width: 90%;
+	margin: 20px 0;
+
+	display: flex;
+	flex-wrap: wrap;	
+}
+
+.code_block{
+	flex: 1 1 auto;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+
+	padding: 10px 10px 20px;
+	margin: 0 20px;
+	background: rgba(32, 32, 32, 1);;
+	border: 2px dashed deeppink;
+	outline: 10px solid rgba(32, 32, 32, 1);
+	
+}
+
+.language-javascript{
+	display: flex;
+	flex-direction: column;
+}
+/* --- code style --- */
+.language-javascript var{
+	color: rgb(255, 255, 0);
+}
+
+.language-javascript .result{
+	color: rgb(233, 43, 43);
+}
+
+.language-javascript .value{
+	color: rgb(102, 178, 255);
+}
+
+.language-javascript .assignment{
+	color: rgb(255, 0, 127);
+}
+
+.language-javascript .consol{
+	color: rgb(40, 218, 40);
+}
+
+.selector_before::before{
+	content: 'Ciekawe jak to działa';
+	color: red;
+	font-size: 18px;
+	font-weight:bold;
+}
+/*----------------*/
+.codeAnim{
+	font-size:12px;
+	font-family: monospace;
+}
+
+#first{
+	width: 46px;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+#second{
+	width: 46px;
+	position: relative;
+	top:0px;
+	left:0px;
+}
+
+@keyframes firstAnimation{
+	0% {
+		font-weight: bold;
+		background: rgba(255, 0, 127, 0.4);
+	}
+	30% {
+		left: 80px;
+		font-weight: bold;
+		background: rgba(255, 0, 127, 0.4);
+	}
+	60% {
+		top:0px;
+		left: 80px;
+		font-weight: bold;
+		background: rgba(255, 0, 127, 0.4);
+	}
+	70% {
+		top:-14px;
+		left: 80px;
+		font-weight: bold;
+		background: rgba(255, 0, 127, 0.4);
+	}	
+	90% {
+		top: -14px;
+		left: 0px;
+		font-weight: normal;
+		background: rgba(255, 0, 127, 0.4);
+	}
+
+	100% {
+		top: -14px;
+		left: 0px;
+		font-weight: normal;
+		background: none;
+	}
+}
+
+@keyframes secondAnimation{
+	0% {
+		top: 0px;
+		background: rgba(255, 0, 127, 0.4);
+	}
+
+	90% {
+		top: 15px;
+		background: rgba(255, 0, 127, 0.4);
+	}
+
+	100%{
+		top: 15px;
+		background: none;
+	}
+}
+
+#first{
+	animation-name: firstAnimation;
+	animation-delay: 1s;
+	animation-duration: 10s;
+	animation-fill-mode: forwards;
+}
+
+#second{
+	animation-name: secondAnimation;
+	animation-delay: 3s;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+}
+
+/*  ---------------   */
+#first_1{
+	position: relative;
+	top: 12px;
+	left: 0px;
+}
+
+#second_1{
+	position: relative;
+	top: 14px;
+	left: 0px;
+}
+
+#second_2{
+	position: relative;
+	top: 14px;
+	left: 10px;
+}
+
+#third_1{
+	position: relative;
+	top: 16px;
+	left: 0px;
+}
+
+@keyframes secondBlock1{
+	0%{
+		top: 14px;
+		background: rgba(255, 0, 127, 0.4);
+	}
+	100%{
+		top: -18px;
+		background: none;
+	}
+}
+
+@keyframes secondBlock2{
+  0% {
+  	left: 0px;
+  	background: rgba(255, 0, 127, 0.4);
+  }
+  100% {
+    left: -36px;
+    background: none;
+  }
+}
+
+@keyframes addingSemicolon{
+  100% {
+    content: ";";
+  }
+}
+
+@keyframes addingVariable{
+  100% {
+    content: 'a';
+    background: rgba(255, 0, 127, 0.4);
+    position: relative;
+    left: 0px;
+  }
+}
+
+#second_1::after{
+	content: ' ';
+	animation-name: addingSemicolon;
+	animation-duration: 8s;
+	animation-fill-mode: forwards;
+}
+
+#second_1{
+	animation-name: secondBlock1;
+	animation-duration: 5s;
+	animation-fill-mode: forwards;
+}
+
+#second_2{
+	animation: secondBlock2 8s forwards; 
+}
+
+#second_2::before{
+	content:' ';
+	animation: addingVariable 8s forwards; 
+}
+
+/* --------------------------------  */
