@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<link rel="stylesheet" type="text/css" href="dest/style.css">
 	<title>Hoisting</title>
 </head>
 <body>
@@ -11,17 +11,18 @@
 	<section class="section">
 		
 		<article class="code_block">
-			<code class="language-javascript">
+			<code class="language-javascript codeAnim">
 				<span>a <span class="assignment">=</span> <span class="value">2</span>;</span>
 				<span><var>var</var> a;</span>
 				<span><span class="consol">console.log</span>(a);</span>
 			</code>
 		</article>
-
+		<button class="btn btn_run_1">Run</button>
+		<button class="btn btn_pause_1">Pause</button>
 		<article class="code_block">
 			<code class="language-javascript codeAnim">
-				<span id="second">a <span class="assignment">=</span> <span class="value">2</span>;</span>
-				<span id="first"><var>var</var> a;</span>
+				<span id="move_1_2"  class="anim_pause">a <span class="assignment">=</span> <span class="value">2</span>;</span>
+				<span id="move_1_1" class="anim_pause"><var>var</var> a;</span>
 				<span><span class="consol">console.log</span>(a);</span>
 				<span class="result">// 2</span>
 			</code>
@@ -32,23 +33,49 @@
 	<section class="section">
 		
 		<article class="code_block">
-			<code class="language-javascript">
+			<code class="language-javascript codeAnim">
 				<span><span class="consol">console.log</span>(a);</span>
 				<span><var>var</var> a<span class="assignment"> = </span><span class="value">2</span>;</span>
 			</code>
 		</article>
-
+		<button class="btn btn_run_2">Run</button>
+		<button class="btn btn_pause_2">Pause</button>
 		<article class="code_block">
-			<code class="language-javascript codeAnim2">
-				<span id="first_1"><span class="consol">console.log</span>(a)</span>
-				<span><span id="second_1"><var>var</var> a</span><span id="second_2"><span class="assignment"> = </span><span class="value">2</span>;</span></span>
-				<span class="result" id="third_1">// undefined</span>
+			<code class="language-javascript codeAnim">
+				<span id="move_2"><span class="consol">console.log</span>(a)</span>
+				<span><span id="move_2_1" class="anim_pause"><var>var</var> a</span><span id="move_2_2" class="anim_pause"><span class="assignment"> = </span><span class="value">2</span>;</span></span>
+				<span class="result" id="move_2_3">// undefined</span>
 			</code>
 		</article>
 
 	</section>
 
-	<p class="selector_before">tttt</p>
+	<section class="section">
+		<article class="code_block">
+			<code class="language-javascript codeAnim">
+				<span>example();</span>
+				<span>function example(){</span>
+				<span class="consol">console.log( a ); // undefined</span>
+				<span>var a = 2;</span>
+				<span>}</span>
+			</code>
+		</article>
+		<button class="btn btn_run_2">Run</button>
+		<button class="btn btn_pause_2">Pause</button>
+	
+		<article class="code_block">
+			<svg xmlns="http://www.w3.org/2000/svg" width="300" height="70" viewBox="0 0 300 70">
+	  		<text x="0" y="10" font-family="Verdana" font-size="12">example();</text>
+	  		<text x="0" y="24" font-family="Verdana" font-size="12">function example(){</text>
+	  		<text x="0" y="38" font-family="Verdana" font-size="12">console.log( a );</text>
+	  		<text x="0" y="52" font-family="Verdana" font-size="12">var a = 2;</text>
+	  		<text x="0" y="66" font-family="Verdana" font-size="12">}</text>
+			</svg>	
+		</article>
+		
+	</section>
+
 	<footer class="footer">2017</footer>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
